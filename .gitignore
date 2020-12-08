@@ -1,0 +1,5 @@
+org-roam.db
+auto-save-list/
+backups/
+elpa/
+eshell/
