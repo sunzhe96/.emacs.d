@@ -10,4 +10,4 @@
 (put 'my-lookup-cam 'xah-lookup-url "https://dictionary.cambridge.org/dictionary/english/word02051")
 (put 'my-lookup-cam 'xah-lookup-browser-function 'browse-url)
 
-(provide 'lookup)
+(provide 'init-lookup)
