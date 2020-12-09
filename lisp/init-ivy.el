@@ -11,6 +11,7 @@
   :custom
   (ivy-count-format "(%d/%d) ")
   (ivy-use-virtual-buffers t)
+  (ivy-use-selectable-prompt t)
   :config (ivy-mode))
 
 ;; (use-package ivy-rich
