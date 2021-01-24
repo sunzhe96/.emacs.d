@@ -1,6 +1,17 @@
 org-roam.db
-auto-save-list/
+
 backups/
+
 elpa/
+
 eshell/
+
+url/
+
 bookmarks
+
+# auto save
+
+auto-save-list/
+*recentf*
+session*
