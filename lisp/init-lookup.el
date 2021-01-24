@@ -1,3 +1,6 @@
+(use-package xah-lookup
+  :ensure t)
+
 (defun my-lookup-cam (&optional @word)
   "lookup php doc of word under cursor"
   (interactive)

@@ -1,9 +1,11 @@
 (use-package counsel
+  :ensure t
   :after ivy
   :config (counsel-mode)
   :bind (("C-x C-f" . counsel-find-file)))
 
 (use-package ivy
+  :ensure t
   :defer 0.1
   :diminish
   :bind (("C-c C-r" . ivy-resume)
@@ -14,17 +16,8 @@
   (ivy-use-selectable-prompt t)
   :config (ivy-mode))
 
-;; (use-package ivy-rich
-;;   :after ivy
-;;   :custom
-;;   (ivy-virtual-abbreviate 'full
-;;                           ivy-rich-switch-buffer-align-virtual-buffer t
-;;                           ivy-rich-path-style 'abbrev)
-;;   :config
-;;   (ivy-set-display-transformer 'ivy-switch-buffer
-;;                                'ivy-rich-switch-buffer-transformer))
-
 (use-package swiper
+  :ensure t
   :after ivy
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
