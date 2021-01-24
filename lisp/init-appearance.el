@@ -1,6 +1,7 @@
 ;; appearance
 (set-frame-font "Hack 14" nil t)
-(global-display-line-numbers-mode)
+(global-display-line-numbers-mode t)
+(global-visual-line-mode t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
