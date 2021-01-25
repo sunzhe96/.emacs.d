@@ -37,5 +37,6 @@
 ;; programming environment
 (require 'init-racket)
 (require 'init-golang)
+(require 'init-python)
 
 ;; end of file
