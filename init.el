@@ -28,7 +28,7 @@
 ;; utilities
 (require 'init-melpa)
 (require 'init-lookup)
-(require 'init-appearance)
+(require 'init-user-interface)
 (require 'init-key-bindings)
 (require 'init-auto-safe)
 (require 'init-org)
