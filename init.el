@@ -14,7 +14,7 @@
    '(:foreground default :background default :scale 3.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(auto-complete markdown-mode go-mode racket-mode ivy-rich ivy use-package xah-lookup doom-themes org-roam counsel)))
+   '(emmet-mode web-mode auto-complete markdown-mode go-mode racket-mode ivy-rich ivy use-package xah-lookup doom-themes org-roam counsel)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,6 +33,7 @@
 (require 'init-ivy)
 
 ;; programming environment
+(require 'init-web)
 (require 'init-auto-complete)
 (require 'init-racket)
 (require 'init-golang)

@@ -38,6 +38,10 @@
                      css-mode
                      makefile-mode
                      sh-mode
-                     xml-mode))))
+                     xml-mode
+		     web-mode
+		     org-mode
+		     org-roam-mode
+		     html-mode))))
 
 (provide 'init-auto-complete)
