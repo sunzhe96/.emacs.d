@@ -1,13 +1,8 @@
 org-roam.db
-
 backups/
-
 elpa/
-
 eshell/
-
 url/
-
 bookmarks
 
 # auto save
@@ -15,3 +10,5 @@ auto-save-list/
 *recentf*
 *recentf*
 session*
+ac-comphist.dat
+tramp
