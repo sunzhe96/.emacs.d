@@ -26,11 +26,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; utilities
-(require 'init-melpa)
-(require 'init-lookup)
-(require 'init-user-interface)
+(require 'init-settings)
 (require 'init-key-bindings)
-(require 'init-auto-safe)
+(require 'init-lookup)
 (require 'init-org)
 (require 'init-ivy)
 
