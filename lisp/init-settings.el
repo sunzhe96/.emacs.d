@@ -1,4 +1,4 @@
-;; appearance
+;; appearance ;;
 (set-frame-font "Hack 14" nil t) 	; font
 (global-display-line-numbers-mode 1)	; line numbers
 (global-visual-line-mode 1)		; wrap line
@@ -7,11 +7,11 @@
 (scroll-bar-mode 0)			; hide scroll bar
 (show-paren-mode 1)			; parenthesis matching
 
-;; auto-safe dir
+;; auto-safe dir ;;
 (setq backup-directory-alist
        `(("." . ,(concat user-emacs-directory "backups"))))
 
-;; Empty response (hitting RET) return "yes" to 'yes-or-no-p'
+;; Empty response (hitting RET) return "yes" to 'yes-or-no-p' ;;
 (defun my-yes-or-mumble-p (prompt)
   "PROMPT user with a yes-or-no question, but only test for yes."
   (if (string= "yes"
@@ -22,9 +22,12 @@
     "yes"))
 (defalias 'yes-or-no-p 'my-yes-or-mumble-p)
 
-;; melpa
+;; melpa ;;
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; (package-initialize)
+
+;; key bindings ;;
+(global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
+(global-set-key (kbd "M-s g") 'xah-lookup-google)
 
 (provide 'init-settings)
