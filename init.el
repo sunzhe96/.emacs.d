@@ -32,6 +32,7 @@
 (require 'init-ivy)
 
 ;; programming environment
+(require 'init-projectile)
 (require 'init-web)
 (require 'init-auto-complete)
 (require 'init-racket)
