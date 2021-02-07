@@ -14,7 +14,7 @@
    '(:foreground default :background default :scale 3.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(projectile emmet-mode web-mode auto-complete markdown-mode go-mode racket-mode ivy-rich ivy use-package xah-lookup doom-themes org-roam counsel)))
+   '(magit projectile emmet-mode web-mode auto-complete markdown-mode go-mode racket-mode ivy-rich ivy use-package xah-lookup doom-themes org-roam counsel)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

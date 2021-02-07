@@ -1,3 +1,6 @@
+;; foring UTF-8 encoding
+(set-language-environment "UTF-8")
+
 ;; appearance ;;
 (set-frame-font "Hack 14" nil t) 	; font
 (global-display-line-numbers-mode 1)	; line numbers
