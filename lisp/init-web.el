@@ -9,7 +9,9 @@
    web-mode-enable-auto-opening t
    web-mode-enable-auto-pairing t
    web-mode-enable-auto-indentation t)
-  (emmet-mode))
+  (emmet-mode)
+  :bind
+  ("C-c C-v" . browse-url-of-buffer))
 
 (use-package emmet-mode
   :ensure t
