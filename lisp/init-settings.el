@@ -1,13 +1,21 @@
-;; foring UTF-8 encoding
+;; Forcing UTF-8 encoding
 (set-language-environment "UTF-8")
 
-;; appearance ;;
-(set-frame-font "Hack 14" nil t) 	; font
+;; Appearance ;;
+(setq default-frame-alist
+      '((font . "Hack-14")
+	(height . 45)
+        (width . 80)
+        (left . 550)
+        (top . 300)
+	(fullscreen . fullboth)
+        (vertical-scroll-bars . nil)
+        (horizontal-scroll-bars . nil)
+        (tool-bar-lines . 0)
+	(menu-bar-lines . 0)))
+
 (global-display-line-numbers-mode 1)	; line numbers
 (global-visual-line-mode 1)		; wrap line
-(menu-bar-mode 0)			; hide menu bar
-(tool-bar-mode 0)			; hide tool bar
-(scroll-bar-mode 0)			; hide scroll bar
 (show-paren-mode 1)			; parenthesis matching
 
 ;; auto-safe dir ;;

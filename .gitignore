@@ -7,7 +7,7 @@ bookmarks
 
 # auto save
 auto-save-list/
-*recentf*
+transient/
 *recentf*
 session*
 ac-comphist.dat
