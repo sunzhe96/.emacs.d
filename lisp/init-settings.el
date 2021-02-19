@@ -1,9 +1,14 @@
 ;; Forcing UTF-8 encoding
 (set-language-environment "UTF-8")
 
+;; env variables
+(setenv "PATH" (concat (getenv "PATH") ":/home/sz96/go/bin"))
+(setq exec-path (append exec-path '("/home/sz96/go/bin")))
+
 ;; Appearance ;;
 (setq default-frame-alist
-      '((font . "Hack-14")
+      '(
+	(font . "Hack-14")
 	(height . 45)
         (width . 80)
         (left . 550)
@@ -14,13 +19,16 @@
         (tool-bar-lines . 0)
 	(menu-bar-lines . 0)))
 
-(global-display-line-numbers-mode 1)	; line numbers
+;(global-display-line-numbers-mode 1)	; line numbers
 (global-visual-line-mode 1)		; wrap line
+
+;; parenthesis ;;
+(electric-pair-mode t)
 (show-paren-mode 1)			; parenthesis matching
 
 ;; auto-safe dir ;;
 (setq backup-directory-alist
-       `(("." . ,(concat user-emacs-directory "backups"))))
+      `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; Empty response (hitting RET) return "yes" to 'yes-or-no-p' ;;
 (defun my-yes-or-mumble-p (prompt)
@@ -33,12 +41,17 @@
     "yes"))
 (defalias 'yes-or-no-p 'my-yes-or-mumble-p)
 
-;; melpa ;;
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; mode line ;;
+(mood-line-mode)
 
 ;; key bindings ;;
 (global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
 (global-set-key (kbd "M-s g") 'xah-lookup-google)
 
+;; melpa ;;
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 (provide 'init-settings)
+
