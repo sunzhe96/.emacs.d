@@ -1,6 +1,9 @@
 ;; Forcing UTF-8 encoding
 (set-language-environment "UTF-8")
 
+;; disable GUN Emacs buffer
+(setq inhibit-startup-screen t)
+
 ;; env variables
 (setenv "PATH" (concat (getenv "PATH") ":/home/sz96/go/bin"))
 (setq exec-path (append exec-path '("/home/sz96/go/bin")))
@@ -19,7 +22,7 @@
         (tool-bar-lines . 0)
 	(menu-bar-lines . 0)))
 
-;(global-display-line-numbers-mode 1)	; line numbers
+(global-display-line-numbers-mode 1)	; line numbers
 (global-visual-line-mode 1)		; wrap line
 
 ;; parenthesis ;;
@@ -42,16 +45,18 @@
 (defalias 'yes-or-no-p 'my-yes-or-mumble-p)
 
 ;; mode line ;;
-(mood-line-mode)
+(use-package mood-line
+  :config
+  (mood-line-mode))
 
 ;; key bindings ;;
+;; (use-package xah-fly-keys
+;;   :config
+;;   (xah-fly-keys-set-layout "qwerty")
+;;   (xah-fly-keys 1))
+
 (global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
 (global-set-key (kbd "M-s g") 'xah-lookup-google)
-
-;; melpa ;;
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
 
 (provide 'init-settings)
 

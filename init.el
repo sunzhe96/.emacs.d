@@ -1,3 +1,14 @@
+;; melpa ;;
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,7 +33,7 @@
    '(:foreground default :background default :scale 3.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(package-selected-packages
-   '(company-lsp gruber-darker-theme molokai-theme mood-line company all-the-icons-ivy-rich all-the-icons-dired all-the-icons-ivy all-the-icons projectile lsp-mode company-go smex magit emmet-mode web-mode auto-complete markdown-mode go-mode racket-mode ivy use-package xah-lookup org-roam counsel))
+   '(xah-fly-keys company-lsp gruber-darker-theme molokai-theme mood-line company all-the-icons-ivy-rich all-the-icons-dired all-the-icons-ivy all-the-icons projectile lsp-mode company-go smex magit emmet-mode web-mode auto-complete markdown-mode go-mode racket-mode ivy use-package xah-lookup org-roam counsel))
  '(pdf-view-midnight-colors (cons "#FCFCFA" "#2D2A2E"))
  '(pos-tip-background-color "#F3E7D3")
  '(pos-tip-foreground-color "#79716c")
