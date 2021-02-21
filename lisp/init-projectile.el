@@ -1,4 +1,5 @@
 (use-package projectile
+  :ensure t
   :init
   (projectile-mode +1)
   (setq projectile-project-search-path '("~/projects/"))

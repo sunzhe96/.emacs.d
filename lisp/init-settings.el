@@ -46,6 +46,7 @@
 
 ;; mode line ;;
 (use-package mood-line
+  :ensure t
   :config
   (mood-line-mode))
 
