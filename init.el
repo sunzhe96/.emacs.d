@@ -4,10 +4,12 @@
 (package-initialize)
 
 ; fetch the list of packages available 
+; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+(dolist (package '(use-package gruber-darker-theme))
+  (unless (package-installed-p package)
+  (package-install package)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
