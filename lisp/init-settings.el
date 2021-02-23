@@ -16,7 +16,8 @@
         (width . 80)
         (left . 550)
         (top . 300)
-	(fullscreen . fullboth)
+	(background-color . "honeydew")
+	;;(fullscreen . fullboth)
         (vertical-scroll-bars . nil)
         (horizontal-scroll-bars . nil)
         (tool-bar-lines . 0)
@@ -34,15 +35,7 @@
       `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; Empty response (hitting RET) return "yes" to 'yes-or-no-p' ;;
-(defun my-yes-or-mumble-p (prompt)
-  "PROMPT user with a yes-or-no question, but only test for yes."
-  (if (string= "yes"
-               (downcase
-                (read-from-minibuffer
-                 (concat prompt "(yes or no) "))))
-      t
-    "yes"))
-(defalias 'yes-or-no-p 'my-yes-or-mumble-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; mode line ;;
 (use-package mood-line
@@ -50,14 +43,16 @@
   :config
   (mood-line-mode))
 
-;; key bindings ;;
-;; (use-package xah-fly-keys
-;;   :config
-;;   (xah-fly-keys-set-layout "qwerty")
-;;   (xah-fly-keys 1))
+;;;; key bindings ;;
+(use-package xah-fly-keys
+  :config
+  (xah-fly-keys-set-layout "qwerty")
+  (xah-fly-keys 1)
+  (define-key xah-fly-key-map (kbd "a") 'counsel-M-x)
+  (define-key key-translation-map (kbd "ESC") (kbd "<home>")))
 
 (global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
-(global-set-key (kbd "M-s g") 'xah-lookup-google)
+(global-set-key (kbd "M-s g") 'xah-lookup-google) ;; lookup google
 
 (provide 'init-settings)
 
