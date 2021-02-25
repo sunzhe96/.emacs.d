@@ -4,10 +4,6 @@
 ;; disable GUN Emacs buffer
 (setq inhibit-startup-screen t)
 
-;; env variables
-(setenv "PATH" (concat (getenv "PATH") ":/home/sz96/go/bin"))
-(setq exec-path (append exec-path '("/home/sz96/go/bin")))
-
 ;; Appearance ;;
 (setq default-frame-alist
       '(
@@ -43,13 +39,20 @@
   :config
   (mood-line-mode))
 
-;;;; key bindings ;;
-(use-package xah-fly-keys
+;; highlight lines exceed 80 chars
+(use-package whitespace
   :config
-  (xah-fly-keys-set-layout "qwerty")
-  (xah-fly-keys 1)
-  (define-key xah-fly-key-map (kbd "a") 'counsel-M-x)
-  (define-key key-translation-map (kbd "ESC") (kbd "<home>")))
+  (setq whitespace-line-column 80) ;; limit line length
+  (setq whitespace-style '(face lines-tail))
+  :hook ((go-mode . whitespace-mode)))
+
+;;;; key bindings ;;
+;; (use-package xah-fly-keys
+;;   :config
+;;   (xah-fly-keys-set-layout "qwerty")
+;;   (xah-fly-keys 1)
+;;   (define-key xah-fly-key-map (kbd "a") 'counsel-M-x)
+;;   (define-key key-translation-map (kbd "ESC") (kbd "<home>")))
 
 (global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
 (global-set-key (kbd "M-s g") 'xah-lookup-google) ;; lookup google
