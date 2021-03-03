@@ -1,5 +1,9 @@
 (use-package web-mode
-  :mode "\\.html\\'"
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.gohtml\\'" . web-mode))
+  (setq web-mode-engines-alist
+	'(("go"  . "\\.gohtml\\.")))
   :config
   (setq
    web-mode-markup-indent-offset 2
