@@ -12,7 +12,6 @@
         (width . 80)
         (left . 550)
         (top . 300)
-	(background-color . "honeydew")
 	;;(fullscreen . fullboth)
         (vertical-scroll-bars . nil)
         (horizontal-scroll-bars . nil)
@@ -27,8 +26,16 @@
 (show-paren-mode 1)			; parenthesis matching
 
 ;; auto-safe dir ;;
-(setq backup-directory-alist
-      `(("." . ,(concat user-emacs-directory "backups"))))
+(setq backup-directory-alist '(("" . "~/.emacs.d/backups")))
+(defun xah-save-all-unsaved ()
+  "Save all unsaved files. no ask.
+Version 2019-11-05"
+  (interactive)
+  (save-some-buffers t ))
+
+(if (version< emacs-version "27")
+    (add-hook 'focus-out-hook 'xah-save-all-unsaved)
+  (setq after-focus-change-function 'xah-save-all-unsaved))
 
 ;; Empty response (hitting RET) return "yes" to 'yes-or-no-p' ;;
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -44,7 +51,7 @@
   :config
   (setq whitespace-line-column 80) ;; limit line length
   (setq whitespace-style '(face lines-tail))
-  :hook ((go-mode . whitespace-mode)))
+  :hook (go-mode . whitespace-mode))
 
 ;;;; key bindings ;;
 ;; (use-package xah-fly-keys

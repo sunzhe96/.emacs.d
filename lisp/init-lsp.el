@@ -1,9 +1,11 @@
 (use-package lsp-mode
   :init
+  (setq lsp-keymap-prefix "C-c l")
   :commands (lsp lsp-deferred)
-  :hook ((go-mode . lsp-deferred))
-  :bind ("C-c l f" . 'lsp-find-definition)
-)
+  :hook
+  ((go-mode . lsp-deferred)
+   (lsp-mode . lsp-enable-which-key-integration))
+  :bind ("C-c l f" . 'lsp-find-definition))
 
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
