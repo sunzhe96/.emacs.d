@@ -4,6 +4,7 @@ elpa/
 eshell/
 url/
 bookmarks
+racket-mode/
 
 # auto save
 auto-save-list/
