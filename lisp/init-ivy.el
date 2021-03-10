@@ -16,10 +16,10 @@
   :config (counsel-mode)
   :bind (("C-x C-f" . counsel-find-file)))
 
-(use-package swiper
-  :ensure t
-  :after ivy
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)))
+;; (use-package swiper
+;;   :ensure t
+;;   :after ivy
+;;   :bind (("C-s" . swiper)
+;;          ("C-r" . swiper)))
 
 (provide 'init-ivy)
