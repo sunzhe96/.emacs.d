@@ -1,3 +1,5 @@
+;; calls flymake-show-diagnostics-buffer when there is only one frame
+;; kill the buffer if the buffer has been opened in a frame
 (defun open-flymake-show-diagnostics-buffer()
   (interactive)
   (if (= (count-windows) 1)
@@ -14,15 +16,15 @@
       (delete-other-windows))))
 
 (use-package lsp-mode
+  :commands (lsp lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :commands (lsp lsp-deferred)
+  :config
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
+  (bind-key "<f6>" 'open-flymake-show-diagnostics-buffer)
   :hook
   ((go-mode . lsp-deferred)
-   (lsp-mode . lsp-enable-which-key-integration))
-  :bind
-  ("C-c l f" . 'lsp-find-definition)
-  ("<f6>" . 'open-flymake-show-diagnostics-buffer))
+   (lsp-mode . lsp-enable-which-key-integration)))
 
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
