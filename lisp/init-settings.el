@@ -61,8 +61,24 @@ Version 2019-11-05"
 ;;   (define-key xah-fly-key-map (kbd "a") 'counsel-M-x)
 ;;   (define-key key-translation-map (kbd "ESC") (kbd "<home>")))
 
+;; Open Eshell in a new frame
+(defun open-eshell ()
+  (interactive)
+  (if (= (count-windows) 1)
+      (progn
+	(split-window-below)
+	(balance-windows)
+	(other-window 1)
+	(eshell))
+    (progn
+      (if (eq (string= (buffer-name) "*eshell*") nil)
+	  (switch-to-buffer-other-window "*eshell*"))
+      (delete-window))))
+
+(global-set-key (kbd "<f5>") 'open-eshell)    ;; open-eshell
 (global-set-key (kbd "M-s s") 'my-lookup-cam) ;; lookup dictionary
 (global-set-key (kbd "M-s g") 'xah-lookup-google) ;; lookup google
 
+(count-windows)
 (provide 'init-settings)
 
