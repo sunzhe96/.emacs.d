@@ -18,7 +18,7 @@
       (kill-buffer)
       (delete-other-windows)))))
 
-;; find-flymake-buffer returns the name of opened buffer which majoe
+;; find-flymake-buffer returns the name of opened buffer whose major
 ;; mode is flymake-diagnostics-buffer-mode 
 (defun find-flymake-buffer(list)
   (let ((mode "flymake-diagnostics-buffer-mode"))
