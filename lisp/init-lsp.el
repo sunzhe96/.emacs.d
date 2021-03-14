@@ -46,9 +46,11 @@
   (interactive)
   (let ((target "*LSP Symbols List*"))
     (if (in  target (mapcar 'buffer-name (buffer-list)))
-	(kill-buffer target)
+	(if (get-buffer-window target)
+	    (window-toggle-side-windows)
+	  (lsp-treemacs-symbols))
      (lsp-treemacs-symbols))))
-  
+
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init
@@ -69,6 +71,7 @@
 
 (use-package lsp-treemacs
   :ensure t
+  :config (lsp-treemacs-sync-mode 1)
   :commands lsp-treemacs-errors-list)
 
 (use-package company
