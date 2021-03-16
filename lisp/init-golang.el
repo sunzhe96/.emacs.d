@@ -1,7 +1,7 @@
 (use-package go-mode
+  :init (add-hook 'go-mode-hook 'subword-mode)
   :ensure t
-  :mode (("\\.go\\'" . go-mode))
-  ;;:hook ((before-save . gofmt-before-save))
-  )
+  :mode (("\\.go\\'" . go-mode)))
+
 
 (provide 'init-golang)
