@@ -8,6 +8,6 @@
   (setq projectile-enable-caching nil)
   (setq projectile-sort-order 'recentf)
   :bind-keymap
-  ("C-c p" . projectile-command-map))
+  ("M-p" . projectile-command-map))
 
 (provide 'init-projectile)
