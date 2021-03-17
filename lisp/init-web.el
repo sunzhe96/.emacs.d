@@ -2,6 +2,8 @@
   :ensure t
   :init
   (add-to-list 'auto-mode-alist '("\\.gohtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
   (setq web-mode-engines-alist
 	'(("go"  . "\\.gohtml\\.")))
   :config
